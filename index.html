@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Altura e Peso - Fórmula de Chumlea</title>
+    <title>Calculadora de Peso - Fórmula de Chumlea</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -11,36 +11,27 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <h2>Calculadora de Altura</h2>
-            <label for="genero">Gênero:</label>
-            <select id="genero">
+            <h2>Calculadora de Peso (Chumlea - AJ/CB)</h2>
+            <label for="idade">Idade (anos):</label>
+            <input type="number" id="idade" placeholder="Digite a idade" required>
+            <label for="genero1">Gênero:</label>
+            <select id="genero1">
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
             </select>
-            
-            <label for="idade">Idade (anos):</label>
-            <input type="number" id="idade" placeholder="Digite a idade" required>
-            
-            <label for="tibia">Altura do joelho (cm):</label>
-            <input type="number" id="tibia" placeholder="Digite a medida" required>
-            
-            <button onclick="calcularAltura()">Calcular Altura</button>
-            <h3 id="resultado-altura"></h3>
-        </div>
-
-        <div class="container">
-            <h2>Calculadora de Peso</h2>
-            <label for="braco">Comprimento do Braço (cm):</label>
-            <input type="number" id="braco" placeholder="Digite a medida" required>
-            
-            <label for="panturrilha">Circunferência da Panturrilha (cm):</label>
-            <input type="number" id="panturrilha" placeholder="Digite a medida" required>
-            
-            <button onclick="calcularPeso()">Calcular Peso</button>
-            <h3 id="resultado-peso"></h3>
+            <label for="etnia">Etnia:</label>
+            <select id="etnia">
+                <option value="branco">Branco</option>
+                <option value="negro">Negro</option>
+            </select>
+            <label for="aj">Altura do joelho (cm):</label>
+            <input type="number" id="aj" placeholder="Digite a medida" required>
+            <label for="cb">Circunferência do braço (cm):</label>
+            <input type="number" id="cb" placeholder="Digite a medida" required>
+            <button onclick="calcularPesoAJCB()">Calcular Peso</button>
+            <h3 id="resultado-peso-ajcb"></h3>
         </div>
     </div>
-    <!-- Referência ao arquivo de scripts -->
     <script src="scripts.js"></script>
 </body>
 </html>
