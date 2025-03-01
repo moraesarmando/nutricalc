@@ -11,7 +11,7 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <h2>Calculadora de Peso (Chumlea - AJ/CB)</h2>
+            <h2>NutriCalc</h2>
             <label for="idade">Idade (anos):</label>
             <input type="number" id="idade" placeholder="Digite a idade" required>
             <label for="genero1">Gênero:</label>
@@ -28,8 +28,13 @@
             <input type="number" id="aj" placeholder="Digite a medida" required>
             <label for="cb">Circunferência do braço (cm):</label>
             <input type="number" id="cb" placeholder="Digite a medida" required>
-            <button onclick="calcularPesoAJCB()">Calcular Peso</button>
+        </div>
+        
+        <div class="container">
+            <button onclick="calcularPesoAJCB()">Calcular Peso (Chumlea - AJ/CB)</button>
             <h3 id="resultado-peso-ajcb"></h3>
+            <button onclick="calcularAlturaEstimada()">Calcular Altura (AJ/idd)</button>
+            <h3 id="resultado-altura-estimada"></h3>
         </div>
     </div>
     <script src="scripts.js"></script>
