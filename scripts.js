@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', () => {
+    atualizarContadorVisitas();
+});
+
 function calcularPesoAJCB() {
   const idade = parseInt(document.getElementById('idade').value);
   const genero = document.getElementById('genero1').value;
@@ -85,4 +89,32 @@ function calcularAlturaEstimada() {
     }
   
     document.getElementById('resultado-altura-estimada').innerText = `altura estimado: ${altura.toFixed(2)} cm`;
-  }
+        }
+
+    function atualizarContadorVisitas() {
+        const contadorElemento = document.getElementById('visit-count');
+
+        if (!contadorElemento) {
+            return;
+        }
+
+        const namespace = 'nutricalc.moraesarmando';
+        const key = 'visits';
+        const endpoint = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+
+        fetch(endpoint)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Erro ao acessar contador: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const valor = typeof data.value === 'number' ? data.value : null;
+                contadorElemento.textContent = valor !== null ? valor.toLocaleString('pt-BR') : 'N/D';
+            })
+            .catch((error) => {
+                console.error('Falha ao atualizar o contador de visitas', error);
+                contadorElemento.textContent = 'N/D';
+            });
+    }

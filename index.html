@@ -9,34 +9,87 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <h2>Calculadora de Peso (Chumlea - AJ/CB)</h2>
-            <label for="idade">Idade (anos):</label>
-            <input type="number" id="idade" placeholder="Digite a idade" required>
-            <label for="genero1">Gênero:</label>
-            <select id="genero1">
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-            </select>
-            <label for="etnia">Etnia:</label>
-            <select id="etnia">
-                <option value="branco">Branco</option>
-                <option value="negro">Negro</option>
-            </select>
-            <label for="aj">Altura do joelho (cm):</label>
-            <input type="number" id="aj" placeholder="Digite a medida" required>
-            <label for="cb">Circunferência do braço (cm):</label>
-            <input type="number" id="cb" placeholder="Digite a medida" required>
-            <button onclick="calcularPesoAJCB()">Calcular Peso</button>
-            <h3 id="resultado-peso-ajcb"></h3>
+    <main class="page">
+        <header class="page-header">
+            <h1>Calculadora de Peso</h1>
+            <p>Estimativas baseadas na fórmula de Chumlea (AJ/CB) com cálculo rápido de altura.</p>
+        </header>
+
+        <section class="cards" aria-label="Ferramentas de cálculo">
+            <article class="card card--form" aria-labelledby="form-title">
+                <div class="card-header">
+                    <h2 id="form-title">Dados antropométricos</h2>
+                    <p class="card-subtitle">Preencha os campos abaixo; eles alimentam todos os cálculos disponíveis.</p>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="idade">Idade (anos)</label>
+                        <input type="number" id="idade" placeholder="Digite a idade" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="genero1">Gênero</label>
+                        <select id="genero1">
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="etnia">Etnia</label>
+                        <select id="etnia">
+                            <option value="branco">Branco</option>
+                            <option value="negro">Negro</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="aj">Altura do joelho (cm)</label>
+                        <input type="number" id="aj" placeholder="Digite a medida" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="cb">Circunferência do braço (cm)</label>
+                        <input type="number" id="cb" placeholder="Digite a medida" required>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card card--actions" aria-labelledby="acoes-title">
+                <div class="card-header">
+                    <h2 id="acoes-title">Calcular resultados</h2>
+                    <p class="card-subtitle">Escolha a operação desejada para obter valores estimados com base nos dados informados.</p>
+                </div>
+
+                <div class="action-group" aria-labelledby="peso-title">
+                    <div class="action-header">
+                        <h3 id="peso-title">Peso estimado</h3>
+                        <p>Aplica a fórmula de Chumlea considerando gênero, etnia e circunferências.</p>
+                    </div>
+                    <button type="button" class="btn primary" onclick="calcularPesoAJCB()">Calcular Peso</button>
+                    <p class="result" id="resultado-peso-ajcb" aria-live="polite"></p>
+                </div>
+
+                <div class="action-group" aria-labelledby="altura-title">
+                    <div class="action-header">
+                        <h3 id="altura-title">Altura estimada</h3>
+                        <p>Utiliza a altura do joelho informada para projetar estatura.</p>
+                    </div>
+                    <button type="button" class="btn ghost" onclick="calcularAlturaEstimada()">Calcular Altura</button>
+                    <p class="result" id="resultado-altura-estimada" aria-live="polite"></p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="visit-counter" aria-live="polite">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <span>Visitas:&nbsp;</span>
+            <strong id="visit-count">--</strong>
         </div>
-        
-        <div class="container">
-            <button onclick="calcularAlturaEstimada()">Calcular Altura</button>
-            <h3 id="resultado-altura-estimada"></h3>
-        </div>
-    </div>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
