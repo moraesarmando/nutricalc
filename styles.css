@@ -172,6 +172,20 @@ select:focus {
     transform: translateY(-1px);
 }
 
+.btn.tertiary {
+    background: #ffffff;
+    color: var(--muted-dark);
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+    box-shadow: none;
+}
+
+.btn.tertiary:hover,
+.btn.tertiary:focus {
+    border-style: solid;
+    color: var(--primary-dark);
+    background: rgba(99, 102, 241, 0.08);
+}
+
 .action-group {
     display: flex;
     flex-direction: column;
@@ -218,6 +232,11 @@ select:focus {
     display: flex;
     align-items: center;
     flex: 1 1 200px;
+}
+
+.result.is-error {
+    background: #fee2e2;
+    color: #b91c1c;
 }
 
 .site-footer {

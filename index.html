@@ -62,22 +62,31 @@
                     <p class="card-subtitle">Escolha a operação desejada para obter valores estimados com base nos dados informados.</p>
                 </div>
 
-                <div class="action-group" aria-labelledby="peso-title">
+                <div class="action-group" aria-labelledby="peso-resultado-title">
                     <div class="action-header">
-                        <h3 id="peso-title">Peso estimado</h3>
+                        <h3 id="peso-resultado-title">Peso estimado</h3>
                         <p>Aplica a fórmula de Chumlea considerando gênero, etnia e circunferências.</p>
                     </div>
-                    <button type="button" class="btn primary" onclick="calcularPesoAJCB()">Calcular Peso</button>
-                    <p class="result" id="resultado-peso-ajcb" aria-live="polite"></p>
+                    <button type="button" class="btn primary" id="btn-calcular-peso">Calcular Peso</button>
+                    <p class="result" id="resultado-peso-ajcb" aria-live="polite">Aguardando cálculo.</p>
                 </div>
 
-                <div class="action-group" aria-labelledby="altura-title">
+                <div class="action-group" aria-labelledby="altura-resultado-title">
                     <div class="action-header">
-                        <h3 id="altura-title">Altura estimada</h3>
+                        <h3 id="altura-resultado-title">Altura estimada</h3>
                         <p>Utiliza a altura do joelho informada para projetar estatura.</p>
                     </div>
-                    <button type="button" class="btn ghost" onclick="calcularAlturaEstimada()">Calcular Altura</button>
-                    <p class="result" id="resultado-altura-estimada" aria-live="polite"></p>
+                    <button type="button" class="btn ghost" id="btn-calcular-altura">Calcular Altura</button>
+                    <p class="result" id="resultado-altura-estimada" aria-live="polite">Aguardando cálculo.</p>
+                </div>
+
+                <div class="action-group" aria-labelledby="gordura-resultado-title">
+                    <div class="action-header">
+                        <h3 id="gordura-resultado-title">Percentual de gordura</h3>
+                        <p>Estimativa baseada no IMC derivado do peso e da altura calculados (equação de Deurenberg).</p>
+                    </div>
+                    <button type="button" class="btn tertiary" id="btn-calcular-gordura">Calcular % de Gordura</button>
+                    <p class="result" id="resultado-percentual-gordura" aria-live="polite">Aguardando cálculo.</p>
                 </div>
             </article>
         </section>
