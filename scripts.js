@@ -316,6 +316,6 @@ function atualizarContadorVisitas() {
         })
         .catch((error) => {
             console.error('Falha ao atualizar o contador de visitas', error);
-            contadorElemento.textContent = 'N/D';
+            // contadorElemento.textContent = 'N/D';
         });
 }
