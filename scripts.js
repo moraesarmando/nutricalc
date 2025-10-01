@@ -292,30 +292,30 @@ function normalizarEtnia(valor) {
     return valor === 'negro' ? 'negro' : 'branco';
 }
 
-function atualizarContadorVisitas() {
-    const contadorElemento = document.getElementById('visit-count');
+// function atualizarContadorVisitas() {
+//     const contadorElemento = document.getElementById('visit-count');
 
-    if (!contadorElemento) {
-        return;
-    }
+//     if (!contadorElemento) {
+//         return;
+//     }
 
-    const namespace = 'nutricalc.moraesarmando';
-    const key = 'visits';
-    const endpoint = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+//     const namespace = 'nutricalc.moraesarmando';
+//     const key = 'visits';
+//     const endpoint = `https://api.countapi.xyz/hit/${namespace}/${key}`;
 
-    fetch(endpoint)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Erro ao acessar contador: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const valor = typeof data.value === 'number' ? data.value : null;
-            contadorElemento.textContent = valor !== null ? valor.toLocaleString('pt-BR') : 'N/D';
-        })
-        .catch((error) => {
-            console.error('Falha ao atualizar o contador de visitas', error);
-            // contadorElemento.textContent = 'N/D';
-        });
-}
+//     fetch(endpoint)
+//         .then((response) => {
+//             if (!response.ok) {
+//                 throw new Error(`Erro ao acessar contador: ${response.status}`);
+//             }
+//             return response.json();
+//         })
+//         .then((data) => {
+//             const valor = typeof data.value === 'number' ? data.value : null;
+//             contadorElemento.textContent = valor !== null ? valor.toLocaleString('pt-BR') : 'N/D';
+//         })
+//         .catch((error) => {
+//             console.error('Falha ao atualizar o contador de visitas', error);
+//             // contadorElemento.textContent = 'N/D';
+//         });
+// }
